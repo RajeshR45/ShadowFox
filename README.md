@@ -1,6 +1,7 @@
 TASKS
 
 1. To train an image classification model and deploy into an application
+
       DATASET PREPARATION : https://www.kaggle.com/datasets/ajaykgp12/cars-wagonr-swift
                             https://www.kaggle.com/datasets/tongpython/cat-and-dog
 
