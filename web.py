@@ -27,29 +27,24 @@ def predict():
         if 'image' not in request.files:
             return jsonify({'error': 'No image file provided'}), 400
 
-        file = request.files['image']  # Get the uploaded image
+        file = request.files['image'] 
 
         if file.filename == '':
             return jsonify({'error': 'No selected file'}), 400
 
-        # Convert to BytesIO stream and load the image
+
         img_bytes = BytesIO(file.read())
-        image = load_img(img_bytes, target_size=(128, 128))  # Resize to model's input size
-        image_array = img_to_array(image) / 255.0  # Normalize the image
-        image_array = np.expand_dims(image_array, axis=0)  # Add batch dimension
-
-        # Make predictions
+        image = load_img(img_bytes, target_size=(128, 128))  
+        image_array = img_to_array(image) / 255.0
+        image_array = np.expand_dims(image_array, axis=0)  
         predictions = model.predict(image_array)
-        predicted_class = class_labels[np.argmax(predictions)]  # Get predicted class
-        confidence = np.max(predictions)  # Get the confidence score
-
-        # Debug: print the prediction and confidence
+        predicted_class = class_labels[np.argmax(predictions)] 
+        confidence = np.max(predictions)  
         print(f"Predicted Class: {predicted_class}, Confidence: {confidence}")
 
-        return jsonify({'predicted_class': predicted_class, 'confidence': f'{confidence:.2f}'})  # Return result
+        return jsonify({'predicted_class': predicted_class, 'confidence': f'{confidence:.2f}'})  
 
     except Exception as e:
-        # Handle any error during the prediction process
         print(f"Error occurred: {str(e)}")
         return jsonify({'error': 'An error occurred during prediction', 'message': str(e)}), 500
 
