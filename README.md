@@ -4,7 +4,6 @@ TASK
 
       DATASET PREPARATION : https://www.kaggle.com/datasets/ajaykgp12/cars-wagonr-swift
                             https://www.kaggle.com/datasets/tongpython/cat-and-dog
-   
                             The dataset is labelled using roboflow (a tool which is used to annotate images).
    
 
