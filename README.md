@@ -1,4 +1,4 @@
-TASKS
+TASK
 
 1. To train an image classification model and deploy into an application
 
@@ -13,7 +13,6 @@ TASKS
 
       MODEL EVALUATION : To evaluate the model the trained model is loaded and the test image is given, the given image is converted into an array with the help of the array it detects which class the image belongs to and it displays the predicted class and confidence percentage of the image.
 
-      DEPLOYMENT
-    web.py : 
-    index.html : 
+      DEPLOYMENT : A web application is developed using HTML (to test the model). Using flask to build server, the input image from the frontend is recieved and the image is provided to the model in the backend and the prediction by the model is sent to the frontend and the prediction is displayed in the frontend.
+    
       
