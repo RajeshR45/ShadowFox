@@ -4,6 +4,9 @@ TASK
 
       DATASET PREPARATION : https://www.kaggle.com/datasets/ajaykgp12/cars-wagonr-swift
                             https://www.kaggle.com/datasets/tongpython/cat-and-dog
+   
+                            The dataset is labelled using roboflow (a tool which is used to annotate images).
+   
 
       DATA AUGUMENTATION : The images in the dataset are reduced in size using train and test_Datagen methods. The height and width of the images are modified upto 20%, rotation range of 30 degree and some images are also flipped horizontally using ImageDataGenerator() method
 
